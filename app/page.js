@@ -81,34 +81,35 @@ export default function Home() {
     };
  
     return (
-        <div>
-            <h1>Todo List</h1>
-            <div className='grid grid-column-3 grid-flow-col gap-4'>
-                <div className='text-red-600 w-[400px]'>
-                    <h2>Main List</h2>
-                    {items.map((item) => (
-                        <button className='btn text-md text-white bg-gray-500 hover:bg-purple-600 w-full shadow-sm group my-2 py-5' key={item.name} onClick={() => moveItem(item.name)}>
-                            {item.name}
-                        </button>
-                    ))}
-                </div>
-                <div>
-                    <h2>Fruits</h2>
-                    {displayItems.filter((item) => item.type === 'Fruit').map((item) => (
-                        <button key={item.name} onClick={() => moveItem(item.name, true)}>
-                            {item.name}
-                        </button>
-                    ))}
-                </div>
-                <div>
-                    <h2>Vegetables</h2>
-                    {displayItems.filter((item) => item.type === 'Vegetable').map((item) => (
-                        <button key={item.name} onClick={() => moveItem(item.name, true)}>
-                            {item.name}
-                        </button>
-                    ))}
-                </div>
-            </div>
-        </div>
+      <div class="m-5">
+      <div class="p-5 grid grid-cols-3 gap-4">
+          <div class="w-[400px]">
+       
+              {items.map((item) => (
+                  <button class="btn text-md text-white bg-gray-500 w-full shadow-sm group my-2 py-5" key={item.name} onClick={() => moveItem(item.name)}>
+                      {item.name}
+                  </button>
+              ))}
+          </div>
+          <div class="w-[400px] border-2 border-black">
+              <h2 class="text-center">Fruits</h2>
+              {displayItems.filter((item) => item.type === 'Fruit').map((item) => (
+                  <button class="btn text-md text-white bg-gray-500 w-full shadow-sm group my-2 py-5" key={item.name} onClick={() => moveItem(item.name, true)}>
+                      {item.name}
+                  </button>
+              ))}
+          </div>
+          <div class="w-[400px] border-2 border-black">
+              <h2 class="text-center">Vegetables</h2>
+              {displayItems.filter((item) => item.type === 'Vegetable').map((item) => (
+                  <button class="btn text-md text-white bg-gray-500 w-full shadow-sm group my-2 py-5" key={item.name} onClick={() => moveItem(item.name, true)}>
+                      {item.name}
+                  </button>
+              ))}
+          </div>
+      </div>
+  </div>
+  
+  
     );
 }
